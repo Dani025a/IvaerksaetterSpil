@@ -12,6 +12,8 @@ public class Worker {
     long workerLevelPrice = 100;
     long balance;
 
+    Building building = new Building();
+
 
     public void buyWorker(long balance){
          if (workerAmount <= 25 && balance >= workerPrice){
@@ -37,26 +39,26 @@ public class Worker {
     public void worker(long balance){
         if (workerLevel != 0){
             if (workerAmount <= 5)
-                this.balance = balance + (((workerAmount + 1) * 2) * (workerLevel + 1));
+                this.balance = balance + (((workerAmount + 1) * 2) * (workerLevel + 1) * building.buildingLevel);
             else if (workerAmount > 10 && workerAmount >= 15)
-                this.balance = balance + (((workerAmount + 1) * 3) * (workerLevel + 1));
+                this.balance = balance + (((workerAmount + 1) * 3) * (workerLevel + 1) * building.buildingLevel);
             else if (workerAmount > 15 && workerAmount >= 20)
-                this.balance = balance + (((workerAmount + 1) * 4) * (workerLevel + 1));
+                this.balance = balance + (((workerAmount + 1) * 4) * (workerLevel + 1) * building.buildingLevel);
             else
-                this.balance = balance + (((workerAmount + 1) * 5) * (workerLevel + 1));
+                this.balance = balance + (((workerAmount + 1) * 5) * (workerLevel + 1) * building.buildingLevel);
 
         }
 
         else if (workerAmount != 0){
             if (workerAmount <= 10)
                 if (workerAmount >= 5)
-                    this.balance = balance + (((workerAmount + 1) * 2));
+                    this.balance = balance + (((workerAmount + 1) * 2) * building.buildingLevel);
                 else if (workerAmount < 10 && workerAmount >= 15)
-                    this.balance = balance + (((workerAmount + 1) * 3));
+                    this.balance = balance + (((workerAmount + 1) * 3) * building.buildingLevel);
                 else if (workerAmount < 15 && workerAmount >= 20)
-                    this.balance = balance + (((workerAmount + 1) * 4));
+                    this.balance = balance + (((workerAmount + 1) * 4) * building.buildingLevel);
                 else
-                    this.balance = balance + (((workerAmount + 1) * 5));
+                    this.balance = balance + (((workerAmount + 1) * 5) * building.buildingLevel);
 
         }
         else this.balance = balance;

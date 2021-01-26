@@ -2,7 +2,7 @@ package sample;
 
 import java.util.Random;
 
-public class Card {
+public class Investment {
 
     long balance;
     Random random = new Random();
@@ -18,7 +18,7 @@ public class Card {
     int cardPicker;
     int procentpicker;
 
-    public void cards(long balance) {
+    public void investment(long balance) {
         if (balance >= 10000) {
             max = balance;
             min = balance % 10;
@@ -129,5 +129,25 @@ public class Card {
 
     public long getBalance() {
         return balance;
+    }
+
+    public int getLosingProcent() {
+        return losingProcent;
+    }
+
+    public int getTwoXProcent() {
+        return twoXProcent;
+    }
+
+    public int getFiveXProcent() {
+        return fiveXProcent;
+    }
+
+    public int getHundredXProcent() {
+        return hundredXProcent;
+    }
+
+    public long getInvestmentAmount() {
+        return investmentAmount;
     }
 }
